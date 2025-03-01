@@ -299,7 +299,7 @@ SENSORS += (
 # System program
 #################
 
-SENSORS += SwitchRWSensor(141, "Priority Load")
+SENSORS += SwitchRWSensor(141, "Priority Load", on=1, off=0)
 
 SENSORS += SelectRWSensor(
     142,
