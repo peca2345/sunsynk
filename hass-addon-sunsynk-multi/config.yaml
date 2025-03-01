@@ -6,7 +6,7 @@ slug: hass-addon-sunsynk-multi
 description: Add-on for a Sunsynk/Deye branded Inverter
 startup: services
 boot: auto
-url: "https://github.com/kellerza/sunsynk"
+url: "https://github.com/peca2345"
 uart: true
 init: false
 arch:
