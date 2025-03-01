@@ -171,13 +171,14 @@ class SwitchRWSensor(RWSensor):
         return res != self.off
 
     def value_to_reg(self, value: ValType, resolve: ResolveType) -> RegType:
-        """Get the reg value from a display value, or the current reg value if out of range."""
-        value = str(value)
-        if value == BOOL_ON:
-            return (self.on,) if self.on else self.masked((0xFF,))
-        if value != BOOL_OFF:
+        value_str = str(value).strip().lower()
+        if value_str in ["on", "1", "true"]:
+            return (self.on,) if self.on is not None else self.masked((0xFF,))
+        elif value_str in ["off", "0", "false"]:
+            return (self.off,)
+        else:
             _LOGGER.warning("%s: ON/OFF expected, got %s", self.name, value)
-        return (self.off,)
+            return (self.off,)
 
 
 @attrs.define(slots=True, eq=False)
