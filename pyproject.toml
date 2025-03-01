@@ -33,7 +33,7 @@ dependencies = [
 license = { text = "Apache-2.0" }
 
 [project.urls]
-Homepage = "https://kellerza.github.io/sunsynk/"
+Homepage = "https://github.com/peca2345/sunsynk"
 
 [project.optional-dependencies]
 umodbus = ["async_modbus==0.2.2", "connio==0.2.0", "umodbus==1.0.4"]
